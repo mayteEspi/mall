@@ -19,6 +19,14 @@
       <start-class>com.rumbo.mall.boot.MallApplication</start-class>
 	</properties>
 
+	<dependencies>
+		<dependency>
+	     <groupId>${project.groupId}</groupId>
+	      <artifactId>mall-service</artifactId>
+	      <version>${project.version}</version>
+   		</dependency>
+	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
