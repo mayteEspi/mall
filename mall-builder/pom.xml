@@ -60,5 +60,6 @@
   	<modules>
         <module>mall-boot</module>
         <module>mall-service</module>
+        <module>mall-dto</module>
   	</modules>
 </project>
