@@ -9,12 +9,11 @@ public class SaleTaxeServiceImpl implements SaleTaxeService{
 	
 	@Override
 	public double findTotalPriceWithTaxe(final ProductDTO product) {
-		final String typeProduct = product.getTypeProduct();
-		final ProductType productType = ProductType.fromValue(typeProduct);
-		final double importedPrice = typeProduct.contains("imported") ? 0 : 0.05;
+		final String productTypeValue = product.getProductType();
+		final ProductType productType = ProductType.fromValue(productTypeValue);
+		final double importedPrice = productTypeValue.contains("imported") ? 0.05 : 0;
 		final double taxe = !isBasicProduct(productType) ? 0.1 : 0;
 		return calculateTaxe(product.getPrice(), importedPrice + taxe);
-	
 	}
 
 	private boolean isBasicProduct(final ProductType productType) {

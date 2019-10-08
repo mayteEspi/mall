@@ -10,11 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import springfox.documentation.spring.web.plugins.Docket;
 
-/**
- * 
- * @author Maite.Espi
- *
- */
+
 @ExtendWith( MockitoExtension.class )
 public class MallSwaggerConfigurationTest {
 
