@@ -1,4 +1,4 @@
-package com.rumbo.mall;
+package com.rumbo.mall.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -14,6 +14,11 @@
  	<name>mall-boot</name>
 	<modelVersion>4.0.0</modelVersion>
 	
+	
+	<properties>
+      <start-class>com.rumbo.mall.boot.MallApplication</start-class>
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>

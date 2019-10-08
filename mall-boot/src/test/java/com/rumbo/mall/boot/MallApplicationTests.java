@@ -1,4 +1,4 @@
-package com.rumbo.mall;
+package com.rumbo.mall.boot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
