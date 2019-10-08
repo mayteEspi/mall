@@ -1,8 +1,6 @@
 package com.rumbo.mall.service.sale;
 
 
-import java.util.List;
-
 import com.rumbo.mall.dto.enums.sale.ProductType;
 import com.rumbo.mall.dto.sale.ProductDTO;
 

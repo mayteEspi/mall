@@ -30,7 +30,7 @@ public enum ProductType {
     
     private static ProductType findProduct(final ProductType typeProduct, final String value) {
     	final String type =  typeProduct.valuesProducType.stream()
-    		    .filter(product -> value.equals(product))
+    		    .filter(product -> value.toLowerCase().contains(product.toLowerCase()))
     		    .findFirst()
     		    .orElse(null);
     	return type != null ? typeProduct : null;

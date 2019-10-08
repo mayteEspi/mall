@@ -19,6 +19,12 @@ public class ProductTypeTest {
 	}
 	
 	@Test
+	public void findImportedBook_shouldReturnBookType() {
+		final String book = "imported book";
+		assertEquals(ProductType.BOOKS, ProductType.fromValue(book));
+	}
+	
+	@Test
 	public void findFood_shouldNotFIndType() {
 		final String food = "melon";
 		assertEquals(ProductType.GENERIC, ProductType.fromValue(food));
