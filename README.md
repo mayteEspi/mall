@@ -10,7 +10,9 @@ Project Description:
 
 3.I use Spring Boot but I not been using @autowired, becaouse declaring beans has this advanges:
 
-  .promotes / facilitates field injection instead of builder / setter, which makes testing difficult
-  .Using @Autowired the module configuration is dispersed, and you cannot know at a glance what configuration do you have
-  .You could read more about it https://www.petrikainulainen.net/software-development/design/why-i-changed-my-mind-about-field-injection/
+  I.promotes / facilitates field injection instead of builder / setter, which makes testing difficult
+  
+  II. Using @Autowired the module configuration is dispersed, and you cannot know at a glance what configuration do you have
+  
+  III. You could read more about it https://www.petrikainulainen.net/software-development/design/why-i-changed-my-mind-about-field-injection/
   
