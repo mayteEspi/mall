@@ -4,11 +4,11 @@ Spring Boot 2 Project using lombok, Orika, juni5, Mockito (Jupiter), Java 8.
 
 Project Description:
 
-1.This porject is a multi-module project
+1. This porject is a multi-module project
 
-2.I did another test two years ago, at that I used a file to write the data, for this reason I prefer to choose another option. 
+2. I did another test two years ago, at that I used a file to write the data, for this reason I prefer to choose another option. 
 
-3.I use Spring Boot but I not been using @autowired, becaouse declaring beans has this advanges:
+3. I use Spring Boot but I not been using @autowired, becaouse declaring beans has this advanges:
 
   I.promotes / facilitates field injection instead of builder / setter, which makes testing difficult
   
