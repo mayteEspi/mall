@@ -1,4 +1,4 @@
-# mall
+# Mall
 
 Spring Boot 2 Project using lombok, Orika, juni5, Mockito (Jupiter), Java 8.
 
