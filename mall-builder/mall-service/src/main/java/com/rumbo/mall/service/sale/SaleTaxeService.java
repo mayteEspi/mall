@@ -4,6 +4,6 @@ import com.rumbo.mall.dto.sale.ProductDTO;
 
 public interface SaleTaxeService {
 
-	double findTotalPriceWithTaxe(ProductDTO product);
+	double findProductTaxe(ProductDTO product);
 
 }
