@@ -8,7 +8,8 @@ Project Description:
 
 2.I did another test two years ago, at that I used a file to write the data, for this reason I prefer to choose another option. 
 
-3.I use Spring Boot but I not been using @autowired, becaouse declaring beans has thios advanges:
+3.I use Spring Boot but I not been using @autowired, becaouse declaring beans has this advanges:
+
   .promotes / facilitates field injection instead of builder / setter, which makes testing difficult
   .Using @Autowired the module configuration is dispersed, and you cannot know at a glance what configuration do you have
   .You could read more about it https://www.petrikainulainen.net/software-development/design/why-i-changed-my-mind-about-field-injection/
