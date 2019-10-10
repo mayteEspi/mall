@@ -16,3 +16,8 @@ Project Description:
   
   III. You could read more about it https://www.petrikainulainen.net/software-development/design/why-i-changed-my-mind-about-field-injection/
   
+
+Test:
+
+To test this app you have available a SaleServiceTest.java class 
+Next days I am going to add a swagger configuration and controller configuration to test this api. 
