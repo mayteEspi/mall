@@ -25,7 +25,13 @@ public class ProductTypeTest {
 	}
 	
 	@Test
-	public void findFood_shouldNotFIndType() {
+	public void findMusicCd_shouldReturnBookType() {
+		final String music = "music CD";
+		assertEquals(ProductType.ELECTRONIC_DEVICES, ProductType.fromValue(music));
+	}
+	
+	@Test
+	public void findFood_shouldNotFindType() {
 		final String food = "melon";
 		assertEquals(ProductType.GENERIC, ProductType.fromValue(food));
 	}

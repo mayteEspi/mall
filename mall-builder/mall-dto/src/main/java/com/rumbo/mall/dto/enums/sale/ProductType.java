@@ -8,10 +8,10 @@ import lombok.Getter;
 @Getter
 public enum ProductType {
 	
-	FOOD(Arrays.asList(new String[]{"chocolate bar", "caramel"})),
+	FOOD(Arrays.asList(new String[]{"chocolate", "caramel"})),
 	COSMETICS(Arrays.asList(new String[]{"eye shadow","bottle of perfume"})),
 	BOOKS(Arrays.asList(new String[]{"book","novel"})),
-	ELECTRONIC_DEVICES(Arrays.asList(new String[]{"music CD","ebook"})),
+	ELECTRONIC_DEVICES(Arrays.asList(new String[]{"music","CD","ebook"})),
 	MEDICATION(Arrays.asList(new String[]{"headache pills","anti-inflammatory"})),
 	GENERIC(Arrays.asList(new String[]{"other"}));
 	

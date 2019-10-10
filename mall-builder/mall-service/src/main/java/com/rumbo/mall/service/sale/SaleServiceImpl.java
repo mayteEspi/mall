@@ -1,42 +1,61 @@
 package com.rumbo.mall.service.sale;
 
+import java.math.RoundingMode;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.rumbo.mall.dto.enums.sale.SaleDTO;
-import com.rumbo.mall.dto.enums.sale.TicketSaleDTO;
 import com.rumbo.mall.dto.sale.ProductDTO;
+import com.rumbo.mall.dto.sale.SaleDTO;
+import com.rumbo.mall.dto.sale.TicketProductDTO;
+import com.rumbo.mall.dto.sale.TicketSaleDTO;
+import com.rumbo.mall.service.mapper.OrikaMapper;
 
 public class SaleServiceImpl implements SaleService {
 
 	private final SaleTaxeService saleTaxeService;
-	
+	private OrikaMapper mapper;
+	 
 	public SaleServiceImpl(SaleTaxeService saleTaxeService) {
 		this.saleTaxeService = saleTaxeService;
+		mapper = new OrikaMapper();
 	}
 
+	@Override
 	public TicketSaleDTO createTicketSale(final SaleDTO sale){
-		double saleTaxes = 0;
-		double totalPriceSale = 0;
-		List<ProductDTO> products = generateDataTicketProducts(sale.getProducts(), saleTaxes, totalPriceSale);	
-		return new TicketSaleDTO(products,saleTaxes, totalPriceSale);
-	}
-	
-	
-	private List<ProductDTO> generateDataTicketProducts(final List<ProductDTO> products, double saleTaxes, double totalPriceSale) {
-		return products.stream()
-				.map(product -> calculatePriceWithTaxe(product, saleTaxes, totalPriceSale))
+		List<TicketProductDTO> products =  sale.getProducts().stream()
+				.map(product ->  mapper.map(product, TicketProductDTO.class))
+				.map(product -> generateDataTicketProduct(product))
 				.collect(Collectors.toList());
+		return new TicketSaleDTO(products,calculateTaxeSale(products), calculateTotalSale(products));
 	}
 	
-	private ProductDTO calculatePriceWithTaxe(final ProductDTO product, double saleTaxes, double totalPriceSale) {
-		final double price = product.getPrice();
-		final double taxe = saleTaxeService.findProductTaxe(product);
-		final double totalPriceProduct =  price + (price*taxe);
-		saleTaxes = saleTaxes + taxe;
-		totalPriceSale = totalPriceSale * product.getQuantity() + totalPriceProduct;
+	private TicketProductDTO generateDataTicketProduct(final TicketProductDTO product) {
+		final double price = product.getPrice() ;
+		final double taxe = saleTaxeService.findProductTaxe(product.getProduct());
+		final double totalPriceProduct =  formatNumber(price + (price*taxe));
 		product.setPrice(totalPriceProduct);
+		product.setTaxePrice(formatNumber(totalPriceProduct - price));
+		product.setPricePerQuantity(formatNumber( totalPriceProduct * taxe));
 		return product;
+	}
+	
+	private double calculateTaxeSale(final List<TicketProductDTO> products) {
+		return products.stream()
+		  .mapToDouble(product -> product.getTaxePrice())
+		  .sum();
+	}
+	
+	private double calculateTotalSale(final List<TicketProductDTO> products) {
+		return products.stream()
+		  .mapToDouble(product -> product.getPricePerQuantity())
+		  .sum();
+	}
+	
+	private double formatNumber(final double value) {
+		final BigDecimal bigDecimal = new BigDecimal(value).setScale(2, RoundingMode.HALF_UP);
+		return bigDecimal.doubleValue();
 	}
 	
 	

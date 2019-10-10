@@ -19,6 +19,7 @@
   	
     <properties>
 		<swagger.version>2.9.2</swagger.version>
+		<orika.version>1.5.2</orika.version>
 	</properties>
 	
   	<dependencies>
