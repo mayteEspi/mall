@@ -47,7 +47,21 @@ public class SaleServiceTest {
 		products.add(new ProductDTO("imported bottle of perfume", 47.50 ,1 ));
 		SaleDTO sale = new SaleDTO(products);
 		final TicketSaleDTO ticket = saleService.createTicketSale(sale);
-		assertTrue(7.65 == ticket.getSaleTaxes());
-		assertTrue(65.15 == ticket.getTotalPriceSale());
+		assertTrue(7.63 == ticket.getSaleTaxes());
+		assertTrue(65.13 == ticket.getTotalPriceSale());
 	}
+	
+	@Test
+	public void searchInput3_shouldReturnTicket() {
+		final List<ProductDTO> products= new ArrayList<>();
+		products.add(new ProductDTO("bottle of perfume", 20.89 ,1 ));
+		products.add(new ProductDTO("imported bottle of perfume", 32.19 ,1 ));
+		products.add(new ProductDTO("packet of headache pills", 9.75 ,1 ));
+		products.add(new ProductDTO("imported box of chocolates", 11.85 ,1 ));
+		SaleDTO sale = new SaleDTO(products);
+		final TicketSaleDTO ticket = saleService.createTicketSale(sale);
+		assertTrue(7.51 == ticket.getSaleTaxes());
+	}
+	
+	
 }

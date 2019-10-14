@@ -1,12 +1,10 @@
 package com.rumbo.mall.service.sale;
 
-import java.math.RoundingMode;
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.rumbo.mall.dto.sale.ProductDTO;
 import com.rumbo.mall.dto.sale.SaleDTO;
 import com.rumbo.mall.dto.sale.TicketProductDTO;
 import com.rumbo.mall.dto.sale.TicketSaleDTO;
@@ -35,21 +33,21 @@ public class SaleServiceImpl implements SaleService {
 		final double price = product.getPrice() ;
 		final double taxe = saleTaxeService.findProductTaxe(product.getProduct());
 		final double totalPriceProduct =  formatNumber(price + (price*taxe));
-		product.setPrice(totalPriceProduct);
+		product.setPrice(formatNumber(totalPriceProduct));
 		product.setTaxePrice(formatNumber(totalPriceProduct - price));
-		product.setPricePerQuantity(formatNumber( totalPriceProduct * taxe));
+		product.setPricePerQuantity( totalPriceProduct * product.getQuantity());
 		return product;
 	}
 	
 	private double calculateTaxeSale(final List<TicketProductDTO> products) {
 		return products.stream()
-		  .mapToDouble(product -> product.getTaxePrice())
+		  .mapToDouble(product -> formatNumber(product.getTaxePrice()))
 		  .sum();
 	}
 	
 	private double calculateTotalSale(final List<TicketProductDTO> products) {
 		return products.stream()
-		  .mapToDouble(product -> product.getPricePerQuantity())
+		  .mapToDouble(product -> formatNumber( product.getPricePerQuantity()))
 		  .sum();
 	}
 	
