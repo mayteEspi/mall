@@ -11,7 +11,7 @@ import com.rumbo.mall.dto.sale.TicketSaleDTO;
 import com.rumbo.mall.service.sale.SaleService;
 
 @RestController
-@RequestMapping( value =  "/ticketSale", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE } )
+@RequestMapping( value =  MallEndPointsUris.MallAPI.TicketSale.ticketSale, produces = { MediaType.APPLICATION_JSON_UTF8_VALUE } )
 public class SaleController {
 	
 	 private final SaleService saleService;
@@ -20,7 +20,6 @@ public class SaleController {
 	 public SaleController(SaleService saleService) {
 		this.saleService = saleService;
 	}
-
 
 	@PostMapping
 	public TicketSaleDTO generateTicketSale(@RequestBody final SaleDTO sale){

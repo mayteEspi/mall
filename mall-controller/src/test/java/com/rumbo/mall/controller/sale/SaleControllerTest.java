@@ -56,7 +56,7 @@ class SaleControllerTest {
     public void findLocationShouldOk() throws Exception {
     	final TicketSaleDTO ticketResp = mockTicketSale();
     	when(saleService.createTicketSale(any(SaleDTO.class))).thenReturn(ticketResp);
-        final MvcResult response = mockMvc.perform( post( "/ticketSale"  ) 
+        final MvcResult response = mockMvc.perform( post( MallEndPointsUris.MallAPI.TicketSale.ticketSale ) 
         		.contentType( APPLICATION_JSON_UTF8 )
         		.content(TestUtil.pojoToJson(mockSaleDTO())))
         		.andExpect( status().isOk() )
