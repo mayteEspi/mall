@@ -25,7 +25,7 @@ public class MallSwaggerConfiguration {
 	private static final String BAD_REQUEST_MESSAGE = HttpStatus.BAD_REQUEST.getReasonPhrase();
 	
 	@Bean
-    public Docket cmAPI() {
+    public Docket mallAPI() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("MALLAPI")
                 .apiInfo(apiInfo())

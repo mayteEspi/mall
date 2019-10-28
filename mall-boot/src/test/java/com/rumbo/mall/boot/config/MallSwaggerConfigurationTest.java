@@ -19,7 +19,7 @@ public class MallSwaggerConfigurationTest {
 
     @Test
     public void cmApi() {
-        final Docket docket = swaggerConfiguration.cmAPI();
+        final Docket docket = swaggerConfiguration.mallAPI();
         assertNotNull( docket );
         assertEquals( "MALLAPI", docket.getGroupName() );
     }
