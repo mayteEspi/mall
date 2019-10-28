@@ -20,4 +20,5 @@ Project Description:
 Test:
 
 To test this app you have available a SaleServiceTest.java class 
-Next days I am going to add a swagger configuration and controller configuration to test this api. 
+or using swagger
+http://localhost:8080/swagger-ui.html
