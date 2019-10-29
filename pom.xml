@@ -11,7 +11,7 @@
 	
 	<artifactId>mall-builder</artifactId>
 	<description>Builder mall proyect</description>
-	<groupId>com.rumbo.mall</groupId>
+	<groupId>com.meh.mall</groupId>
     <modelVersion>4.0.0</modelVersion>
     <name>mall-builder</name>
     <version>0.0.1-SNAPSHOT</version>

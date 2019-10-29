@@ -4,7 +4,7 @@
 	
 	<parent>
 	    <artifactId>mall-builder</artifactId>
-	    <groupId>com.rumbo.mall</groupId>
+	    <groupId>com.meh.mall</groupId>
 	    <version>0.0.1-SNAPSHOT</version>
   	</parent>
 	
@@ -16,7 +16,7 @@
 	
 	
 	<properties>
-      <start-class>com.rumbo.mall.boot.MallApplication</start-class>
+      <start-class>com.meh.mall.boot.MallApplication</start-class>
 	</properties>
 
 	<dependencies>

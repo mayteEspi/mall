@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.rumbo.mall</groupId>
+    <groupId>com.meh.mall</groupId>
     <artifactId>mall-builder</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
